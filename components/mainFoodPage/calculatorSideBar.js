@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import styles from "./styles/calculatorSideBar.module.css";
+import Image from 'next/image';
 import {
   useCalculator,
   useCalculatorUpdate,
@@ -19,7 +20,7 @@ export default function CalculatorSideBar({ onCalcClick }) {
   return (
     <div className={styles.calculatorsidebarframe}>
       <div className={styles.myCalculatorHeader}>
-        <img
+        <Image
           className={styles.calculatoricon}
           alt=""
           src="/calculatorIcon.png"
@@ -67,7 +68,7 @@ function CalculatorFoodItem({ foodItem }) {
   return (
     <li key={foodItem.id}>
       <div>
-        <img src={`/${foodItem.imagePath}`} alt={foodItem.name} />
+        <Image src={`/${foodItem.imagePath}`} alt={foodItem.name} />
         <p>{foodItem.name}</p>
         <button
           onClick={() =>

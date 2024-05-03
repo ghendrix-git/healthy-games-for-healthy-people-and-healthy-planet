@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useCalculatorUpdate } from "../../context/calculatorContext"; 
 import styles from "./styles/header-footer.module.css";
+import Image from 'next/image';
 
 /*************************************************************************
  * Component: TopBar
@@ -32,7 +33,7 @@ function TopBar() {
         rel="noopener noreferrer"
         className={styles.osuLink}
       >
-        <img
+        <Image
           className={styles.oregonstateuniversityicon}
           alt=""
           src="/oregonStateUniversityIcon.png"

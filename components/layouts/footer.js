@@ -1,4 +1,5 @@
 import styles from "./styles/header-footer.module.css";
+import Image from 'next/image';
 
 /*************************************************************************
  * Component: footer
@@ -9,17 +10,17 @@ function Footer() {
   return (
     <div className={styles.footerframe}>
       <div className={styles.footerInfoContainer}>
-        <img className={styles.osufootericon} alt="" src="/osufootericon.svg" />
+        <Image className={styles.osufootericon} alt="" src="/osufootericon.svg" />
         <b className={styles.collegeOfHealth}>
           College Of Health ASP3IRE Center
         </b>
         <b className={styles.oregonStateUniversitys}>
-          Oregon State University’s Advancing Science, Practice, Programming and
-          Policy in Research Translation for Children's Environmental Health
+          Oregon State University&apos;s Advancing Science, Practice, Programming and
+          Policy in Research Translation for Children&apos;s Environmental Health
           Center
         </b>
       </div>
-      <img className={styles.dividerlineIcon} alt="" src="/dividerline.svg" />
+      <Image className={styles.dividerlineIcon} alt="" src="/dividerline.svg" />
     </div>
   );
 }

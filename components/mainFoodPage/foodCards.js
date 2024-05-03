@@ -1,6 +1,7 @@
 import { useCalculatorUpdate } from "../../context/calculatorContext";
 import foodImages from "../../data/food_images";
 import styles from "./styles/foodCards.module.css";
+import Image from 'next/image';
 
 /*************************************************************************
  * Component: FoodCards
@@ -46,7 +47,7 @@ function FoodCard({ id, name }) {
 
   return (
     <div className={styles.foodcard}>
-      <img className={styles.foodcardimage} src={`/${imagePath}`} alt={name} />
+      <Image className={styles.foodcardimage} src={`/${imagePath}`} alt={name} />
       <p>{name}</p>
       {calculatorUpdateFunctions.isInCalculator(id) ? (
         <div

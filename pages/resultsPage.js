@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
 import { supabase } from "../lib/initSupabase";
 import { useRouter } from "next/router";
+import Image from 'next/image';
 
 import {
   useCalculator,
@@ -39,7 +40,7 @@ const ResultsPage = () => {
   const onNewCalcClick = useCallback(() => {
     calculatorFunctions.onClearCalculator();
     router.push("/mainFoodPage");
-  }, [router]);
+  }, [calculatorFunctions, router]);
 
   //function to fetch foods with color information
   const fetchData = async () => {
@@ -95,7 +96,7 @@ const ResultsPage = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);;
 
   // const onCookedRawDropdownFrameContainerClick = useCallback((val) => {
   //   //sync to proj
@@ -221,7 +222,7 @@ function FoodResult({
   return (
     <div className={styles.individualResultsCard}>
       <div className={styles.imageAndFoodName}>
-        <img src={currentFood.imagePath} alt={currentFood.name} />
+        <Image src={currentFood.imagePath} alt={currentFood.name} />
         <h2 className={styles.currentFoodName}>{currentFood.name}</h2>
       </div>
       <div className={styles.AmountAndFootprint}>

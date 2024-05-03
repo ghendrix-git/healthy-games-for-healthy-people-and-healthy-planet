@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image from 'next/image';
 import ColorMeter from "./colorMeter";
 
 import styles from "./styles/mainBanner.module.css";
@@ -25,7 +25,7 @@ const MainBanner = ({ foods, numOfStars, servingSizeConversion }) => {
     <div className={styles.mainBanner}>
       <div className={styles.imageColumn}>
         {foods.map((food) => (
-          <img
+          <Image
             key={food.id}
             className={styles.foodImage}
             src={food.imagePath}
